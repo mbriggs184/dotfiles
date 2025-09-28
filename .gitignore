@@ -1,0 +1,11 @@
+# macOS
+.DS_Store
+
+# Node / tooling caches
+node_modules/
+dist/
+tmp/
+*.log
+
+# Secrets (never commit plain text secrets)
+secrets/*

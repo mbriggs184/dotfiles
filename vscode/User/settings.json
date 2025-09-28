@@ -1,0 +1,17 @@
+{
+    "git.enableSmartCommit": true,
+    "git.autofetch": true,
+    "[dart]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "editor.rulers": [
+            80
+        ],
+        "editor.selectionHighlight": false,
+        "editor.tabCompletion": "onlySnippets",
+        "editor.wordBasedSuggestions": "off"
+    },
+    "workbench.colorTheme": "Atom One Dark",
+    "workbench.iconTheme": "material-icon-theme",
+    "security.workspace.trust.untrustedFiles": "open"
+}

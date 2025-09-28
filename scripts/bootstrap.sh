@@ -4,8 +4,9 @@ set -euo pipefail
 # Symlink tracked config files/directories from this repository into their expected locations.
 # Existing non-symlink targets are backed up with a timestamp, then replaced with a symlink.
 
-# Resolve repository directory even if invoked via a symlink
-REPOSITORY_DIRECTORY="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# Compute repository root (script lives in repo/scripts)
+SCRIPT_DIRECTORY="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPOSITORY_DIRECTORY="$(cd "${SCRIPT_DIRECTORY}/.." && pwd)"
 CURRENT_TIMESTAMP="$(date +%Y%m%d-%H%M%S)"
 
 link_path() {
@@ -44,8 +45,7 @@ link_path() {
   echo "Linked: $target_absolute_path -> $source_absolute_path"
 }
 
-# Mappings: one line per file or directory you want to manage.
-# (Directories are linked as directories, which works well for Karabiner assets and VS Code snippets.)
+# --- Mappings ---
 
 # Karabiner
 link_path "karabiner/karabiner.json" "$HOME/.config/karabiner/karabiner.json"

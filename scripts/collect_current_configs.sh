@@ -5,8 +5,9 @@ set -e
 set -u
 set -o pipefail
 
-# Resolve repository root even if invoked via a symlink
-repository_directory="${0:A:h}"
+# Compute repository root (script lives in repo/scripts)
+script_directory="${0:A:h}"
+repository_directory="${script_directory:h}"
 
 copy_file_if_exists() {
   local source_path="$1"
@@ -38,10 +39,8 @@ copy_directory_contents_if_exists() {
 copy_file_if_exists "$HOME/.config/karabiner/karabiner.json" \
   "$repository_directory/karabiner/karabiner.json"
 
-# Karabiner complex modifications (copy if any JSONs exist)
 typeset -a karabiner_json_files
 karabiner_json_files=("$HOME/.config/karabiner/assets/complex_modifications/"*.json(N))
-
 if (( ${#karabiner_json_files} )); then
   mkdir -p "$repository_directory/karabiner/assets/complex_modifications"
   for json_file in "${karabiner_json_files[@]}"; do
@@ -52,7 +51,7 @@ else
   echo "No complex modification JSON files found."
 fi
 
-# VS Code
+# VS Code (Stable)
 copy_file_if_exists "$HOME/Library/Application Support/Code/User/settings.json" \
   "$repository_directory/vscode/User/settings.json"
 

@@ -1,19 +1,23 @@
 {
-    "git.enableSmartCommit": true,
-    "git.autofetch": true,
-    "[dart]": {
-        "editor.formatOnSave": true,
-        "editor.formatOnType": true,
-        "editor.rulers": [
-            80
-        ],
-        "editor.selectionHighlight": false,
-        "editor.tabCompletion": "onlySnippets",
-        "editor.wordBasedSuggestions": "off"
-    },
     "workbench.colorTheme": "Atom One Dark",
-    "workbench.iconTheme": "material-icon-theme",
-    "security.workspace.trust.untrustedFiles": "open",
+    "reactSnippets.settings.prettierEnabled": true,
+    "workbench.tree.indent": 16,
+    "git.enableSmartCommit": true,
     "git.confirmSync": false,
-    "explorer.confirmDragAndDrop": false
+    "dart.flutterSdkPath": "/Users/mbriggs/development/flutter",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "maui.configuration.androidSdkPreferredPath": "/Users/mbriggs/Library/Developer/Xamarin/android-sdk-macosx",
+    "security.workspace.trust.untrustedFiles": "open",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "explorer.confirmPasteNative": false,
+    "explorer.confirmDelete": false,
+    "diffEditor.ignoreTrimWhitespace": true,
+    "explorer.confirmDragAndDrop": false,
+    "dart.debugExternalPackageLibraries": true,
+    "dart.debugSdkLibraries": true,
+    "dart.showTodos": true,
+    "editor.minimap.enabled": false,
+    "editor.tabCompletion": "on",
+    "maui.configuration.javaSdkPreferredPath": "/Library/Java/JavaVirtualMachines/microsoft-11.jdk/Contents/Home",
+    "workbench.iconTheme": "material-icon-theme"
 }
